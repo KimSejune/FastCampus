@@ -1,0 +1,63 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *: before, *: after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  height: 1000px;
+  text-align: center;
+}
+
+header h1 {
+  background-color: blanchedalmond;
+  color: skyblue;
+  margin: 20px;
+  padding: 20px;
+  height: 20%;
+}
+
+section {
+  display: inline-block;
+  width: 78%;
+  height: 65%;
+  background-color: salmon;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 0 15px;
+}
+
+section article {
+  width: 80%;
+  height: 50%;
+  background-color: rosybrown;
+  margin: 20px;
+  padding: 20px;
+}
+
+section .nav-center {
+  width: 90%;
+  height: 30%;
+  background-color: aquamarine;
+  margin: 20px;
+  padding: 20px;
+}
+
+aside {
+  width: 10%;
+  background-color: aqua;
+  margin: 20px;
+  padding: 20px;
+  height: 65%;
+  float: right;
+}
+
+footer {
+  height: 10%;
+  background-color: pink;
+  margin: 20px;
+  padding: 20px;
+}
