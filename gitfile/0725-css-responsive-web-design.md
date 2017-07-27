@@ -115,6 +115,9 @@
 ### 2.2 Responsive Navigation Bar - Smartphone
 - header-menu 요소 내에 클릭할 수 있는 navigation icon을 만들기 위한 html tag를 추가한다. `label tag의 for 프로퍼티값과 input tag의 id 프로퍼티값이 일치`하여야 한다.
 
+- span의 class는 햄버거의 위 아래를 생성하는데 필요하다.
+- input의 id는 label의 for에 입력해 줌으로써 서로 연결한다. 
+- input의 class는 checked의 여부를 확인하기 위해서 
 ```
 <nav>
   <input class="nav-toggle" id="nav-toggle" type="checkbox">
