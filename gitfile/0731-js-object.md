@@ -5,7 +5,7 @@
 ## 1. 객체(Object)란?
 - 자바스크립트는 객체기반의 스크립트 언어이며 이루고 있는 거의 모든것은 객체이다
 - 객체 = 키 + 데이터 + 동작
-  - 이름(키) + 값으로 구성된 데이터(프로퍼티) + 동작을 타나태는(메서드)
+  - 이름(키) + 값으로 구성된 데이터(프로퍼티) + 동작을 나타내는(메서드)
 
 ### 1.1 프로퍼티(Property)
 - 객체는 이름(name)과 값(value)의 쌍인 프로퍼티들을 포함하는 컨테이너라고 할 수 있다.
@@ -17,9 +17,11 @@
 
 ## 2. 객체 생성 방법
 - 자바스크립트는 클래스라는 개념이 없고 별도의 객체 생성 방법이 존재한다.
-  - 객체 리터럴, objec() 생성자 함수, 생성자 함수 3가지의 방법이 존재한다.
+  - 객체 리터럴, object() 생성자 함수, 생성자 함수 3가지의 방법이 존재한다.
 
 ### 2.1 객체 리터럴
+- 중괄호({})를 사용하여 객체를 생성하는데 {} 내에 아무것도 기술하지 않으면 빈 객체가 생성된다. 
+- {} 내에 1개 이상의 `프로퍼티 이름(Property name): 프로퍼티 값(Property value)`을 기술하면 해당 프로퍼티가 추가된 객체를 생성할 수 있다.
 
 ```javascript
 var emptyObject = {};  // empty object 즉 property가 없다.
@@ -44,7 +46,7 @@ person.sayHello(); // Hi! My name is Lee
 > 객체내에서 method가 다른 property를 선택할때는 this를 가르킨다.
 
 ### 2.2 Object() 생성자 함수
-- new 연산자와 Object() 생성자 함수를 사용하여 빈 객체를 생성할 수 있다.
+- new 연산자와 `Object() 생성자 함수`를 사용하여 빈 객체를 생성할 수 있다.
 
 ```javascript
 // 빈 객체의 생성
@@ -63,7 +65,7 @@ person.sayHello(); // Hi! My name is Lee
 
 ```
 
-- 객체 리터럴 방식으로 생성된 객체는 결국 내장(Built-in) 함수인 Object() 생성자 함수로 객체를 생성하는 것을 단순화 시킨 short-hand(축약법)이다.
+- `객체 리터럴 방식으로 생성된 객체`는 결국 내장(Built-in) 함수인 Object() 생성자 함수로 객체를 생성하는 것을 단순화 시킨 `short-hand(축약법)이다.`
 
 ### 2.3 생성자 함수
 - 동일한 프로퍼티를 갖는 객체를 한번에 만든다.
@@ -222,7 +224,7 @@ console.log(person); // Object {first-name: 'Ung-mo', last-name: 'Lee'}
 
 ## 4. Pass-by-reference
 - 참조형이란? 객체의 모든 연산이 실제값이 아닌 참조값으로 처리됨을 의미한다.
-- 기본자료형의 값은 값(value)으로 전달된다. 즉, 복사되어 전달된다. 이를 pass-by-value라 하며 한번 값이 정해지면 변경할 수 없다(immutable).
+- 객체형과 다르게 기본자료형의 값은 값(value)으로 전달된다. 즉, 복사되어 전달된다. 이를 pass-by-value라 하며 한번 값이 정해지면 변경할 수 없다(immutable).
 
 ```javascript
 // Pass-by-reference
@@ -238,7 +240,7 @@ bar.val = 20;  // val에 20을 넣으면 bar도 자동으로 반영된다 둘은
 console.log(foo.val, bar.val); // 20 20
 console.log(foo === bar);      // true
 ```
-- pass-by-reference는 변수 foo, bar 모두 동일한 객체를 참조하고 있다. 따라서 참조하고 있는 객체의 val 값이 변경되면 변수 foo, bar 모두 동일한 객체를 참조하고 있으므로 두 변수 모두 변경된 객체의 프로퍼티 값을 참조하게 된다. 객체는 참조(Reference) 방식으로 전달된다. `결코 복사되지 않는다.`
+- pass-by-reference는 변수 foo, bar 모두 동일한 객체를 참조하고 있다. 따라서 참조하고 있는 객체의 val 값이 변경되면 변수 foo, bar 모두 동일한 객체를 참조하고 있으므로 `두 변수 모두 변경된 객체의 프로퍼티 값을 참조`하게 된다. 객체는 참조(Reference) 방식으로 전달된다. `결코 복사되지 않는다.`
 
 - 예) pass-by-value
 
@@ -270,6 +272,13 @@ console.log(a, b);    // 1  1
 console.log(a === b); // true
 
 a = 10;
-console.log(a, b);    // 1  10
+console.log(a, b);    // 10  1
 console.log(a === b); // false
 ```
+
+## 6. 객체의 분류
+- 객체는 아래와 같이 분류된다.
+![img](../images/object.png);
+
+  - DOM : 정보를 가진 객체이다.
+  - BOM : browser를 컨트롤하기위한 객체들을 나타낸다.
