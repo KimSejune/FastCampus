@@ -4,8 +4,22 @@
 
 - 자바스크립트의 함수는 호출될 때, 매개변수로 전달되는 인자값 이외에, `arguments 객체와 this를 암묵적으로 전달 받는다.`
 
+```javascript
+function square(number) {
+
+  console.log(arguments);
+  console.log(this);  // browser에서는 window로 node에서는 global로 출력된다.
+  // 전역이다.
+
+  return number * number;
+}
+
+var result = square();
+```
+
+
 - `This는 특별한 상황 2가지를 제외한 경우는 모두 전역변수를 의미한다.`
-  - 예외 1. method로 호출될때 / method의 내부함수도 전역 변수이다.
+  - 예외 1. method로 호출될때 호출한 것이 this로 사용된다./ method의 내부함수도 전역 변수이다.
   - 예외 2. 생성자 함수에서 생성된 객체의 경우 `this는 생성자 함수가 생성할 객체를 가르킨다.`  
 
 - 자바스크립트의 경우 자바와 같이 this에 바인딩되는 객체는 한가지가 아니라 `해당 함수 호출 패턴에 따라 this에 바인딩되는 객체가 달라진다.`
@@ -134,14 +148,14 @@ var obj = {
 > var that = this; 여기서 this는 obj이다 즉 that은 obj이므로 이상해지면 that을 써준다.
 
 ## 3. 생성자 호출 패턴(Constructor Invocation Pattern)
-- 생성자 함수를 생성시 new를 쓴것과 안쓴것은 차이가 있다.
+- 생성자 함수를 생성시 `new를 쓴것과 안쓴것은 차이가 있다.`
 
 ### 3.1 생성자 함수 동작 방식
 
 - 빈 객체 생성 및 this 바인딩
 - this를 통한 프로퍼티 생성
 - 생성된 객체 반환
-  - 생성자 함수 내부에는 return을 안써주는 것이다.
+  - 생성자 함수 내부에는 return을 안써주는 것이다. 암묵적으로 해주기에 안써주는것이다 쓰면 코드가 꼬인다.
   - `this는 생성자 함수가 생성할 객체를 가르킨다.`
 
 ```javascript
