@@ -364,7 +364,7 @@ console.log(items); // [ 'a', 'b', 'c' ]
 ```
 
 ### 5.10 Array.prototype.splice(start, deleteCount, item…)
-- 기존의 배열의 요소를 제거하고 그 위치에 새로운 요소를 추가한다. 배열 중간에 새로운 요소를 추가할 때도 사용된다.
+- `기존의 배열의 요소를 제거하고 그 위치에 새로운 요소를 추가한다.` 배열 중간에 새로운 요소를 추가할 때도 사용된다.
   - start : 배열에서의 시작 위치이다
   - deleteCount : 시작 위치(start)부터 제거할 요소의 수이다.
   - item : 삭제한 위치에 추가될 요소들이다. (옵션)
@@ -418,6 +418,7 @@ console.log(res);   // [ ]
 
 - 배열의 내용을 적절하게 정렬한다.
   - 수를 정렬할때 `인자로 callback함수를 주어야한다.`
+- 원본이 변경이 된다.
 
 ```javascript
 var fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
