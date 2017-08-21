@@ -66,6 +66,8 @@ req.onreadystatechange = function (e) {
 ```
 - XMLHttpRequest의.readyState가 4인 경우, 서버 응답이 완료된 상태이므로 이후 XMLHttpRequest.status가 200(정상 응답)임을 확인하고 정상인 경우, XMLHttpRequest.responseText를 취득한다.
 
+> 서버가 전송한 데이터는  XMLHttpRequest.responseText에 담겨있다.
+
 ## 4. JSON
 
 ```json
